@@ -138,4 +138,33 @@ Para cada funcionalidad, deben hacer **exactamente 3 commits** en este orden:
 5. README con instrucciones de ejecución
 6. Una GitHub Action que ejecute sus tests (¡Verde por el último commit!)
 
+## Integración Continua
 
+Este proyecto incluye integración continua con GitHub Actions que:
+
+- ✅ Ejecuta automáticamente `pytest` en cada push y pull request
+- ✅ Verifica la calidad del código con `flake8`, `black`, e `isort`
+- ✅ Genera reportes de cobertura de código
+- ✅ Funciona con múltiples versiones de Python (3.8-3.11)
+- ✅ Muestra badges de estado en tiempo real
+
+### Badge de Estado
+![CI Status](https://github.com/Mazulini/Tarea-Dudo-TDD/actions/workflows/ci.yml/badge.svg)
+
+### Ejecutar Localmente
+
+```bash
+# Instalar dependencias
+pip install -r requirements.txt
+
+# Ejecutar tests
+pytest tests/ -v
+
+# Ejecutar tests con cobertura
+pytest tests/ --cov=src --cov-report=term-missing
+
+# Verificar formato del código
+black --check src tests
+isort --check-only src tests
+flake8 src tests
+```

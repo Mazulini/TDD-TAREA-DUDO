@@ -1,0 +1,45 @@
+El "Dudo" es un juego de dos o más jugadores. Cada jugador tiene un "cacho" (vaso de cuero) con cinco dados.
+
+En cada turno, los jugadores agitan los dados en el cacho y los voltea sobre la mesa, ocultándolos de los demás.
+
+El objetivo del juego es especular sobre la cantidad de repeticiones de una determinada cara superior de los dados (les llamaremos "pintas"), sabiendo solamente el resultado de los propios. Por ejemplo, la cantidad de veces que está presente la pinta cuatro en todas las caras superiores de los dados en los cubiletes de todos los jugadores. Cada jugador debe adivinar el número de dados de cada pinta en el resto de los jugadores, cruzando la información que ve en sus propios dados, con las apuestas de los demás, a sabiendas de que se puede mentir o simular unas "cartas" distintas de las reales.
+
+El juego comienza determinando qué jugador iniciará la partida. Esto se realiza tirando un dado. Quien obtenga el número mayor comienza la partida. En caso de empate en el número mayor se vuelve a tirar.
+
+Quien empieza, dice en voz alta su estimación del total de dados de un valor determinado entre todos los jugadores. Por ejemplo: "En la mesa hay dos dados con tres" o "dos trenes", dicho en la jerga tradicional del juego.
+
+Es importante saber las denominaciones tradicionales que se le asignan a las distintas caras de los dados:
+
+La cara o "pinta" 1: "As"
+La cara o "pinta" 2: "Tonto"
+La cara o "pinta" 3: "Tren".
+La cara o "pinta" 4: "Cuadra".
+La cara o "pinta" 5: "Quina".
+La cara o "pinta" 6: "Sexto"
+
+La persona que parte define si el juego se efectuará hacia su izquierda (en el sentido de las manecillas del reloj) o hacia su derecha (contra reloj).
+
+El siguiente jugador debe elevar el número especulado, cambiarlo a una denominación o "pinta" mayor, con la misma o mayor cantidad de apariciones, dudar, "calzar", "matar" la apuesta o pasar. Por ejemplo, un jugador empezó con "dos trenes". La persona siguiente (en uno u otro sentido según defina quien inicia el juego) puede responder a esa apuesta aumentando el número de apariciones a "tres trenes"; o subir la pinta a "dos cuadras", "dos quinas" o "dos sextos". Sin embargo, no podrá decir "dos tontos" dado que solo es posible elevar la apuesta, ya sea en número de dados, o en el valor de dichos dados.
+
+Si quien sigue, decide "dudar", en vez de subir el número de apariciones, deberá anunciarlo en voz alta diciendo "lo dudo" o "dudo" simplemente. Tras esta declaración, todos los jugadores muestran sus juegos. Sí existiera un número igual o mayor de dados con la pinta especulada en la apuesta, quien dudó pierde un dado. Si por el contrario, la apuesta fuese efectivamente mayor que el número real de apariciones de la pinta (por ejemplo, si especuló tres trenes pero existen solo dos), pierde un dado la persona que efectuó la apuesta.
+Si decide "calzar" la apuesta, al contabilizar el número de apariciones debe ser exactamente el especulado por el anterior jugador. Si esta condición se cumple, el jugador que "calzó" la apuesta recibe un dado de regreso. Si ya tiene cinco queda con uno a favor, a la espera de que pierda alguno para entrar en juego. Si por el contrario la apuesta es distinta del número real de apariciones de la pinta, quien "calzó" pierde un dado. Solo se puede calzar cuando esté la mitad o más de los dados en juego o cuando el jugador que desea calzar tenga un solo dado.
+
+Los "Ases", además de ser una pinta, son comodines y se les asigna el valor del número que se está apostando siempre y cuando esté en juego dicho número. Además, tienen reglas especiales para sus apuestas: En caso de que la pinta de la apuesta se cambiara a ases, se permite rebajar el número de apariciones en curso, a la mitad de la apuesta actual más uno en caso de ser par, o a la mitad aproximado hacia arriba de ser impar. Por ejemplo, si la apuesta actual es "siete trenes", se puede bajar a "cuatro ases" (7:2=3,5. Con los decimales redondeados hacia arriba = 4), pero si la apuesta actual es "ocho trenes", se puede bajar a "5 ases" (mitad más uno). A su vez, si se está apostando por ases y se quiere cambiar de pinta, solo se permite apostar al doble más uno (o más) respecto del número de ases de la apuesta. Por ejemplo para cambiar la apuesta de "dos ases" a "trenes", deberá apostarse por "cinco Trenes" o más (2*2 = 4 + 1 = 5). No se puede partir un turno apostando con "ases", a menos que tengas solo un dado en mano para los cual existe una salvedad aparte.
+
+El jugador que pierde o recoja un dado comienza en la siguiente ronda.
+
+Un dado en juego (obligar)
+
+Cuando cualquier jugador queda por primera vez con un solo dado en juego, puede optar por jugar una ronda especial. En éste, los ases valen como "uno" y no sirven como comodines, por lo que se puede partir con ellos pues tienen las mismas probabilidades que las otras pintas. El jugador que está con un dado puede elegir entre jugar "abierto" o "cerrado".
+
+Al "obligar" una ronda "abierta", los jugadores deben mostrar sus dados a los contrincantes pero no pueden ver los suyos, especulando por las "manos" de los contrincantes pero sin saber la suya.
+
+Si el jugador opta por "obligar" ronda "cerrada", él será el único que podrá ver su dado mientras los demás tendrán que especular sin ver lo que tienen.
+
+Esta opción es válida solo cuando, por primera vez, el jugador se encuentra con un dado en mano. Si se mantiene en juego, el próximo turno continúa según las reglas antes mencionadas y no podrá volver a ocupar dicho beneficio.
+
+Al "obligar", el jugador que inicia la partida da una "pinta" que no puede cambiarse, a excepción de que haya otro jugador más con un dado. Este último puede cambiar la pinta por una cantidad mayor a la que le llegó del jugador anterior.
+
+Fin del Juego
+
+El juego acaba cuando solo un jugador se mantiene el juego y el resto pierde todos sus dados.
