@@ -1,7 +1,6 @@
 """
 Configuration for pytest tests.
 """
-
 import sys
 from pathlib import Path
 
