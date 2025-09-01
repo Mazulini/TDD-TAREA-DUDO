@@ -2,8 +2,9 @@
 Módulo que contiene las clases Dado y Pinta para el juego Dudo Chileno.
 """
 
-import random
 from enum import Enum
+
+from src.servicios.generador_aleatorio import GeneradorAleatorio
 
 
 class Pinta(Enum):
@@ -21,19 +22,18 @@ class Pinta(Enum):
 
 
 class Dado:
-    """
-    Clase que representa un dado del juego Dudo Chileno.
-    """
-
-    def __init__(self):
-        """Inicializa un dado con una pinta aleatoria."""
-        self._pinta = random.choice(list(Pinta))
+    def __init__(self, generador: GeneradorAleatorio = GeneradorAleatorio()):
+        """
+        Inicializa un dado con una pinta aleatoria.
+        Usa generar_entero para elegir un índice en Pinta.
+        """
+        pintas = list(Pinta)
+        valor = generador.generar_entero(0, len(pintas) - 1)
+        # si valor es un Enum, lo usamos; si es int, lo convertimos a Pinta
+        self.__pinta = valor if isinstance(valor, Pinta) else pintas[valor]
 
     def show(self):
         """
-        Retorna la pinta actual del dado.
-
-        Returns:
-            Pinta: La pinta actual del dado
+        Retorna la pinta del dado
         """
-        return self._pinta
+        return self.__pinta
