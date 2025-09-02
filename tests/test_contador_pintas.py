@@ -1,8 +1,10 @@
+from unittest.mock import Mock
+
+import pytest
+
+from src.juego.cacho import Cacho
 from src.juego.contador_pintas import ContadorPintas
 from src.juego.dado import Pinta
-from src.juego.cacho import Cacho
-import pytest
-from unittest.mock import Mock
 
 
 class TestContadorPintas:
