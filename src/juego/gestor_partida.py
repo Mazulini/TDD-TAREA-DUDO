@@ -33,13 +33,8 @@ class GestorPartida:
 
     @property
     def cachos(self):
-        """Propiedad para mantener compatibilidad con tests existentes"""
+        """Retorna una lista de los cachos de todos los jugadores"""
         return [jugador.cacho for jugador in self.jugadores]
-
-    @property
-    def dados_a_favor(self):
-        """Propiedad para mantener compatibilidad con tests existentes"""
-        return [jugador.dados_a_favor for jugador in self.jugadores]
 
     def elegir_accion(self, jugador, accion):
         tipo = accion.get("tipo")
