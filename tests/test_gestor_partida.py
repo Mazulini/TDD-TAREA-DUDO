@@ -25,6 +25,44 @@ class TestGestorPartida:
             assert resultado["resultado"] == "pierde_dudador"
             mock_resolver.assert_called_once()
 
+    def test_partida_completa(self):
+        """
+        Simula una partida completa con 2 jugadores, varias rondas,
+        donde siempre se apuesta y el siguiente jugador duda.
+        La partida termina cuando hay un ganador.
+        """
+        gestor = GestorPartida(num_jugadores=2, dados_por_jugador=2)
+
+        # Mockeamos el árbitro y el validador
+        with patch.object(
+            gestor.arbitro, "resolver_duda", return_value="pierde_dudador"
+        ), patch(
+            "src.juego.validador_apuesta.ValidadorApuesta.es_valida", return_value=True
+        ):
+
+            # Mientras no haya ganador
+            while not gestor.hay_ganador():
+                jugador_actual = gestor.jugador_actual
+
+                # El jugador actual hace apuesta mínima
+                apuesta = Apuesta(1, Pinta.AS)
+                resultado_apuesta = gestor.elegir_accion(
+                    jugador_actual, {"tipo": "apuesta", "apuesta": apuesta}
+                )
+
+                # Comprobamos que la apuesta fue considerada válida
+                assert resultado_apuesta["valida"] is True
+
+                # Siguiente jugador duda
+                siguiente = gestor.siguiente_jugador()
+                resultado_duda = gestor.elegir_accion(siguiente, {"tipo": "dudar"})
+                assert resultado_duda["resultado"] == "pierde_dudador"
+
+        # Al final debe haber un ganador
+        assert gestor.hay_ganador() is True
+        ganador = gestor.obtener_ganador()
+        assert ganador in [j.nombre for j in gestor.jugadores]
+
     def test_inicializa_con_jugadores_y_cachos(self):
         """Test que verifica la inicialización correcta del gestor"""
         gestor = GestorPartida(num_jugadores=3, dados_por_jugador=5)
