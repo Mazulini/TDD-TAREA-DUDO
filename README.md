@@ -27,10 +27,11 @@ pip install -r requirements.txt
 
 4. Corregir Configuración del Proyecto (si es necesario)
 
-Renombrar archivo de configuración si está mal escrito:
-
-Rename-Item "pyproyect.toml" "pyproject.toml" -ErrorAction SilentlyContinue
-
+Renombrar archivo de configuración si hay problema de compatibilidad:
+````
+Rename-Item "pyproyect.toml" "pyproject.toml"
+pip install -e .
+````
 ### 🧪 Ejecución de los tests
 Para ejecutar los tests, después de instalar las dependencias con pip o equivalente, pueden usar:
 ```
