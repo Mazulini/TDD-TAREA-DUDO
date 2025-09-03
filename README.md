@@ -60,5 +60,4 @@ flake8 src tests
 ```
 
 ### 🧑 Integrantes 
--Diego Ignacio Pérez Torres
--Matias Felipe Jener Valdebenito Valenzuela
+Diego Ignacio Pérez Torres - Matias Felipe Jener Valdebenito Valenzuela
