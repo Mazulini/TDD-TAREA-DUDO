@@ -25,6 +25,12 @@ pip install -r requirements.txt
 ````
 (se recomienda ejecutar el comando en un entorno virtual 🐍)
 
+4. Corregir Configuración del Proyecto (si es necesario)
+
+Renombrar archivo de configuración si está mal escrito:
+
+Rename-Item "pyproyect.toml" "pyproject.toml" -ErrorAction SilentlyContinue
+
 ### 🧪 Ejecución de los tests
 Para ejecutar los tests, después de instalar las dependencias con pip o equivalente, pueden usar:
 ```
