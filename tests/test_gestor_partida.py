@@ -53,11 +53,20 @@ class TestGestorPartida:
         assert gestor.cachos[1].get_cantidad_dados() == 5
         assert gestor.cachos[2].get_cantidad_dados() == 5
         assert gestor.arbitro.usar_ases_comodin is True
+        # Después de dudar, la ronda termina y se agitan los dados
+        assert gestor.ultima_apuesta is None
+        assert gestor.ronda_actual == 1
 
-        # Jugador 1 calza la apuesta actual
-        resultado = gestor.elegir_accion(1, {"tipo": "calzar"})
+        # Nueva ronda: Jugador 1 hace una nueva apuesta
+        resultado = gestor.elegir_accion(
+            1, {"tipo": "apuesta", "apuesta": Apuesta(2, Pinta.TREN)}
+        )
+        assert resultado["valida"] is True
+
+        # Jugador 2 calza la nueva apuesta
+        resultado = gestor.elegir_accion(2, {"tipo": "calzar"})
         assert resultado["resultado"] == "pierde_calzador"
-        assert gestor.cachos[1].get_cantidad_dados() == 4
+        assert gestor.cachos[2].get_cantidad_dados() == 4
 
         # Verifica reglas especiales si algún jugador queda con un dado
         gestor.cachos[2].get_cantidad_dados = Mock(return_value=1)
@@ -151,36 +160,36 @@ class TestGestorPartida:
         """Test que verifica que cuando un jugador con 5 dados gana al calzar,
         recibe un dado a favor en lugar de un sexto dado en juego"""
         gestor = GestorPartida(num_jugadores=2, dados_por_jugador=5)
-        assert gestor.dados_a_favor[0] == 0
+        assert gestor.jugadores[0].dados_a_favor == 0
         # Simular que el jugador gana al calzar
         gestor.agregar_dado(0)
         # Como ya tiene 5 dados, debe recibir un dado a favor
         assert gestor.cachos[0].get_cantidad_dados() == 5
-        assert gestor.dados_a_favor[0] == 1
+        assert gestor.jugadores[0].dados_a_favor == 1
 
     def test_dados_a_favor_se_usan_antes_de_perder_dados_del_cacho(self):
         """Test que verifica que cuando un jugador pierde un dado y tiene dados a favor,
         usa el dado a favor primero antes de perder un dado del cacho"""
         gestor = GestorPartida(num_jugadores=2, dados_por_jugador=5)
         # Dar un dado a favor al jugador 0
-        gestor.dados_a_favor[0] = 1
+        gestor.jugadores[0].dados_a_favor = 1
         cantidad_inicial = gestor.cachos[0].get_cantidad_dados()
         # Quitar un dado
         gestor.quitar_dado(0)
         # Debe usar el dado a favor y mantener los 5 dados del cacho
         assert gestor.cachos[0].get_cantidad_dados() == cantidad_inicial
-        assert gestor.dados_a_favor[0] == 0
+        assert gestor.jugadores[0].dados_a_favor == 0
 
     def test_quitar_dado_del_cacho_cuando_no_hay_dados_a_favor(self):
         """Test que verifica que cuando un jugador no tiene dados a favor,
         pierde un dado del cacho directamente"""
         gestor = GestorPartida(num_jugadores=2, dados_por_jugador=5)
-        assert gestor.dados_a_favor[0] == 0
+        assert gestor.jugadores[0].dados_a_favor == 0
         cantidad_inicial = gestor.cachos[0].get_cantidad_dados()
         gestor.quitar_dado(0)
         # Debe perder un dado del cacho
         assert gestor.cachos[0].get_cantidad_dados() == cantidad_inicial - 1
-        assert gestor.dados_a_favor[0] == 0
+        assert gestor.jugadores[0].dados_a_favor == 0
 
     def test_agregar_dado_cuando_tiene_menos_de_5(self):
         """Test que verifica que cuando un jugador tiene menos de 5 dados,
@@ -192,4 +201,4 @@ class TestGestorPartida:
         gestor.agregar_dado(0)
         # Debe recibir el dado en el cacho
         assert gestor.cachos[0].get_cantidad_dados() == cantidad_inicial + 1
-        assert gestor.dados_a_favor[0] == 0
+        assert gestor.jugadores[0].dados_a_favor == 0
