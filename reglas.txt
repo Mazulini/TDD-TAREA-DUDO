@@ -43,3 +43,5 @@ Al "obligar", el jugador que inicia la partida da una "pinta" que no puede cambi
 Fin del Juego
 
 El juego acaba cuando solo un jugador se mantiene el juego y el resto pierde todos sus dados.
+
+#Reglas extraidas de la siguiente pagina: https://www.donpichuncho.cl/aprende-a-jugar-dudo-en-cacho
