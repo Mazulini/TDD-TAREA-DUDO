@@ -1,4 +1,7 @@
 # 🎲 Simulador del Juego Dudo Chileno
+[![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen)]()
+[![Coverage](https://img.shields.io/badge/coverage-pytest%20--cov-green)]()
 
 Simulación virtual del juego tradicional chileno "Dudo". La implementación está realizada en el lenguaje de programación Python e incluye la lógica del juego junto con tests que verifican su correcto funcionamiento.
 
